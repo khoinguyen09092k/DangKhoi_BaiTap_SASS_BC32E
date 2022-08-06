@@ -1,0 +1,212 @@
+@import '../Helpers/Variable';
+@import '../Component/Button';
+
+.footer {
+    background-image: url('../img/footer_background.jpg');
+    // background-position: top bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 400px;
+    @media screen and (max-width:768px) {
+        height: 600px;
+        background-position: top center;
+        background-size: 250%;
+    
+        
+}
+@media screen and (max-width:576px) {
+    height: auto;
+    background-position: top center;
+    background-size: 250%;
+
+    
+}
+
+    .container {
+        padding-top: 50px;
+
+        .row {
+            .col {
+                @for $i from 0 to 4 {
+                    .footer_item-#{$i+1}{
+                        animation: fadeDown 01s*($i+1)
+
+                    }
+
+                }
+                .footer_item-1 {
+                    h3 {
+                        @include text($text-2xl, $text-semibold, $color-white);
+                    }
+
+                    .content {
+                        padding: 7px 0;
+                        i{
+                            // @include text($text-xl, $text-regular, $color-white);
+                            font-size: $text-xl;
+                            color: $color-white;
+                            padding: 0 7px;
+
+
+
+                        }
+
+                        span {
+                            @include text($text-base, $text-regular, $color-white);
+                            font-family: 'Roboto Condensed', sans-serif;
+
+                        }
+                    }
+
+                    .contact_item {
+                        i {
+                            @include text($text-xl, $text-regular, $color-white);
+                            padding: 0 7px;
+
+                            &:hover {
+                                color: $color-black-1;
+                            }
+                        }
+                    }
+                }
+
+                .footer_item-2 {
+
+                    h3 {
+                        @include text($text-2xl, $text-semibold, $color-white);
+                    }
+
+                    .content {
+                        padding: 7px 0;
+                        border-bottom: 0.1px solid rgba(41, 40, 40, 0.2);
+                        
+                        a {
+                            @include text($text-base, $text-regular, $color-white);
+                            text-decoration: none;
+                            font-family: 'Roboto Condensed', sans-serif;
+
+
+                            &:hover {
+                                color: rgba(225, 225, 225, 0.8);
+                            }
+
+
+                        }
+
+                    }
+                }
+
+                .footer_item-3 {
+                    h3 {
+                        @include text($text-2xl, $text-semibold, $color-white);
+                    }
+
+                    .content {
+                        border-bottom: 0.1px solid rgba(41, 40, 40, 0.2);
+                        padding: 7px 0;
+
+                        a {
+                            @include text($text-base, $text-regular, $color-white);
+                            text-decoration: none;
+                            font-family: 'Roboto Condensed', sans-serif;
+
+
+                            &:hover {
+                                color: rgba(225, 225, 225, 0.8);
+                            }
+
+
+                        }
+
+                    }
+                }
+
+
+                .footer_item-4 {
+                    h3 {
+                        @include text($text-2xl, $text-semibold, $color-white);
+                        padding: 10px 0;
+
+                    }
+
+                    .form_input {
+                        position: relative;
+
+                        .input_E {
+                            width: 250px;
+                            height: 50px;
+                            border: 1px solid rgba(225, 225, 225, 0.2);
+                            border-radius: 30px;
+                            background-color: transparent;
+
+
+                        }
+
+                        .input_E:focus {
+                            outline: none;
+                            border-color: $color-white;
+                        }
+
+                        .label_input_E {
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            line-height: 50px;
+                            user-select: none;
+                            pointer-events: none;
+                            @include text($text-2xs, $text-regular, $color-white);
+                            @media screen and (max-width:768px) {
+                                left: 37%; 
+                                // transform: translateY(-50px);                         
+                        }
+                            @media screen and (max-width:576px) {
+                                left: 37%; 
+                                transform: translateY(-50px);                         
+                        }
+                        }
+
+                    }
+
+                    .btnSubscribe {
+                        button {
+                            @include text($text-1xs, $text-semibold, $color-black-1);
+                            width: 250px;
+                            height: 50px;
+                            border-radius: 30px;
+                            outline: none;
+                            margin-top: 10px;
+                            border: 1px solid $color-white;
+                            background-color: $color-white;
+                            transition: 0.5s ease;
+
+                            &:hover {
+                                background-color: $color-primary;
+                                color: $color-white;
+                            }
+                        }
+
+
+                    }
+
+
+
+                }
+            }
+
+
+        }
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        transition: translateY(-300px);
+        opacity: 0;
+
+    }
+
+    to {
+        transition: translateY(0);
+        opacity: 1;
+    }
+}

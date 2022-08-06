@@ -1,0 +1,215 @@
+@import '../Helpers/Variable';
+@import '../Component/Button';
+header.sticky{
+    background: $color-white;
+   
+}
+header {
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 4;
+  
+    @media screen and (max-width:768px)  {
+        position: relative;
+    }
+
+
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        
+
+        @media screen and (max-width:1200px) {
+            flex-direction: row;
+            justify-content: flex-start;
+
+        }
+
+        @media screen and (max-width:576px) {
+            .hidden-mobile {
+                display: none;
+            }
+
+        }        
+        #bars {
+            font-size: 30px;
+            line-height: 70px;
+            cursor: pointer;
+            display: none;
+          margin: 0;
+            
+            @media screen and (max-width:1200px) {
+                        padding-right: 10px ;
+                        display: block;
+                    }
+                }
+    
+    }
+
+    .logo {
+        margin: 0;
+        padding: 0;
+
+        img {
+            @media screen and (max-width:1200px) {
+                width: 50px;
+                // left: 100px;
+                align-items: center;
+
+            }
+        }
+
+    }
+
+    nav {
+        
+
+        @media screen and (max-width:1200px) {
+            position: fixed;
+            width: 50%;
+            height: 100vh;
+            z-index: -7;
+            left: -100%;
+            flex-direction: column;
+            background-color: $color-white;
+            transition: 1s ease;
+            &.show{
+                left: 0;
+            }
+           
+        }
+        display: flex;
+        .menu {
+            padding: 0 0 0 80px;
+
+            @media screen and (max-width:1200px) {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+
+            .navbar_nav {
+                margin: 0;
+                @media screen and (max-width:1200px) {
+                    padding-top: 90px;
+                    padding-left: 0;
+
+                    }
+
+                .nav_item {
+                    display: inline-block;
+                    @media screen and (max-width:1200px) {
+                    display: block;
+
+                    }
+
+                    a {
+                        @include text($text-2xs, $text-semibold, $color-black-1);
+                        font-family: 'Montserrat', sans-serif;
+                        padding: 15px;
+                        // margin: 0;
+                        line-height: 90px;
+                        align-items: center;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: $color-primary;
+                            transition: 0.5s ease;
+                        }
+
+                        @media screen and (max-width:1200px) {
+                            display: block;
+                            line-height: 20px;
+
+                        }
+                   
+                    }
+                   
+
+                }
+             
+            }
+
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width:1200px) {
+
+                flex-direction: column;
+            }
+
+            .phone {
+                padding: 0 20px;
+
+                button {
+                    // @include text($text-1xs, $text-semibold, $color-white);
+                    width: 180px;
+                    height: 50px;
+                    border-radius: 30px;
+                    outline: none;
+                    margin-top: 10px;
+                    border: 1px solid $color-white;
+                    background-color: $color-primary;
+                    transition: 0.5s ease;
+                    @include text($text-base, $text-semibold, $color-white);
+
+                    &:hover {
+                        background-color: $color-white;
+                        color: $color-primary;
+                        border: 1px solid $color-primary;
+
+                    }
+                }
+            }
+
+            .contact_item {
+                a {
+                    padding: 0;
+                    text-decoration: none;
+
+                    i {
+                        @include text($text-base, $text-semibold, $color-black-1);
+                        // font-size: $text-base;
+                        margin: 0;
+                        padding: 0 5px;
+                        line-height: 90px;
+                        align-items: center;
+                        transition: all 1s;
+
+                        &:hover {
+                            color: $color-primary;
+                        }
+                    }
+                }
+
+            }
+            
+        }
+        
+        
+        
+        // @media screen and (max-width:768px) {
+        //     #check:checked ~ nav{
+        //         left: 0;
+        //     }
+        //     #check:checked ~ label #bars{
+        //         display: none;
+        //     }
+        //     #check:checked ~ label #cancel{
+        //         display: block;
+        //     }
+            
+        // }
+
+
+    }
+}
